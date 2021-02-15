@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo servico:</strong>
+  <%= @tipo_servico.tipo_Servico %>
+</p>
+
+<p>
+  <strong>Valorunitario:</strong>
+  <%= @tipo_servico.valorUnitario %>
+</p>
+
+<p>
+  <strong>Valortotal:</strong>
+  <%= @tipo_servico.valorTotal %>
+</p>
+
+<p>
+  <strong>References:</strong>
+  <%= @tipo_servico.references %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_servico_path(@tipo_servico) %> |
+<%= link_to 'Back', tipo_servicos_path %>

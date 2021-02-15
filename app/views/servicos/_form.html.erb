@@ -1,0 +1,77 @@
+<%= form_with(model: servico) do |form| %>
+  <% if servico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(servico.errors.count, "error") %> prohibited this servico from being saved:</h2>
+
+      <ul>
+        <% servico.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :prestador %>
+    <%= form.text_field :prestador %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipoServico %>
+    <%= form.text_field :tipoServico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :saida %>
+    <%= form.date_select :saida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :retorno %>
+    <%= form.date_select :retorno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtd %>
+    <%= form.number_field :qtd %>
+  </div>
+
+  <div class="field">
+    <%= form.label :peso_saida %>
+    <%= form.text_field :peso_saida %>
+  </div>
+
+  <div class="field">
+    <%= form.label :peso_retorno %>
+    <%= form.text_field :peso_retorno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :totalServico %>
+    <%= form.text_field :totalServico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref_peca %>
+    <%= form.text_field :ref_peca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :solicitante %>
+    <%= form.text_field :solicitante %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qtdAproduzir %>
+    <%= form.number_field :qtdAproduzir %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

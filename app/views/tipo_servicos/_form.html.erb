@@ -1,0 +1,37 @@
+<%= form_with(model: tipo_servico) do |form| %>
+  <% if tipo_servico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tipo_servico.errors.count, "error") %> prohibited this tipo_servico from being saved:</h2>
+
+      <ul>
+        <% tipo_servico.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tipo_Servico %>
+    <%= form.text_field :tipo_Servico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valorUnitario %>
+    <%= form.text_field :valorUnitario %>
+  </div>
+
+  <div class="field">
+    <%= form.label :valorTotal %>
+    <%= form.text_field :valorTotal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :references %>
+    <%= form.text_field :references %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

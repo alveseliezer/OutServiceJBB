@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prestador: MyString
+  tipoServico: MyString
+  saida: 2021-02-15
+  retorno: 2021-02-15
+  qtd: 1
+  peso_saida: 1.5
+  peso_retorno: 1.5
+  totalServico: 9.99
+  ref_peca: MyString
+  solicitante: MyString
+  status: MyString
+  qtdAproduzir: 1
+
+two:
+  prestador: MyString
+  tipoServico: MyString
+  saida: 2021-02-15
+  retorno: 2021-02-15
+  qtd: 1
+  peso_saida: 1.5
+  peso_retorno: 1.5
+  totalServico: 9.99
+  ref_peca: MyString
+  solicitante: MyString
+  status: MyString
+  qtdAproduzir: 1

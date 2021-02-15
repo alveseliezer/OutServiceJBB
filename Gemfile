@@ -6,7 +6,7 @@ ruby '2.7.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.2', '>= 6.1.2.1'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.1', :groups => [:development, :production]
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -30,10 +30,6 @@ gem 'wkhtmltopdf-binary'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
-group :production do
-  gem 'pg', '~> 1.1'
-end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

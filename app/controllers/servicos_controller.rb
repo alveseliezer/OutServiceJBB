@@ -15,31 +15,7 @@ class ServicosController < ApplicationController
           end
     end
   end
-  # Inclusões do projeto
-  def list
-    @busca = "%#{params[:search]}%"   
-    @servicos = Servico.where("prestador LIKE ?", @busca).where("status LIKE 'Criado'")
-    
-    @total_servico = 0
-    @servicos.each do |s|
-       if s.valorUnitarioServico == nil and s.qtd == nil 
-       @total_servico  = 0 
-       end 
-       if s.valorUnitarioServico != nil and s.qtd != nil 
-        @total_servico  = @total_servico  + s.totalServico.to_i
-       end 
-    end
-  end
  
-  def geral 
-    @geral = Servico.all
-    @busca = "%#{params[:search]}%"   
-    @geral = Servico.where("prestador LIKE ?", @busca)
-    @teste = params[:id]
-    puts @teste
-  end
-  ######################
-  # GET /servicos/1 or /servicos/1.json
   def show
     respond_to do |format|
       format.html

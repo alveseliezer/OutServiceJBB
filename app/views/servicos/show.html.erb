@@ -1,64 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="card border-secondary mb-3" style="max-width: 30rem; margin-left: 350px; margin-top: 10px;">
+  <div class="card-header"><h5>J.B. Brutos</h5></div>
+    <div class="card-body text-secondary">
 
-<p>
-  <strong>Prestador:</strong>
-  <%= @servico.prestador %>
-</p>
+      <p style="color: black;">
+        <strong>Prestador:</strong>
+        <%= @servico.prestador %>
+        <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Tipo Serviço:</strong>
+        <%= @servico.tipoServico %><br>
+        <strong>Saida:</strong>
+        <%= @servico.saida.strftime("%d/%m/%Y")  %>
+        <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Retorno:</strong>
+        <%= @servico.retorno.strftime("%d/%m/%Y")  %><br>
+        <strong>Qtd:</strong>
+        <%= @servico.qtd %>
+        <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Qtd. a Produzir:</strong>
+        <%= @servico.qtdAproduzir %><br>
+        <strong>Peso saida:</strong>
+        <%= @servico.peso_saida %>
+        <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Peso retorno:</strong>
+        <%= @servico.peso_retorno %><br> 
+        <strong>Ref peca:</strong>
+        <%= @servico.ref_peca %>
+        <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Status:</strong>
+        <%= @servico.status %><br>
+        <strong>Solicitante:</strong>
+        <%= @servico.solicitante %>
+        
+      </p>
 
-<p>
-  <strong>Tiposervico:</strong>
-  <%= @servico.tipoServico %>
-</p>
+      <% if current_user.email == "adm@adm.com" %>
+        <%= link_to 'Editar', edit_servico_path(@servico),:class=>'btn btn-outline-warning' %> 
+      <% end %>
+      <%= link_to 'Voltar', servicos_path, :class=>'btn btn-outline-dark'  %>
+      <%= link_to 'Visualizar Impressão', servico_path(@servico, format: 'pdf'), target: :_blank, :class=>'btn btn-outline-danger' %>
 
-<p>
-  <strong>Saida:</strong>
-  <%= @servico.saida %>
-</p>
-
-<p>
-  <strong>Retorno:</strong>
-  <%= @servico.retorno %>
-</p>
-
-<p>
-  <strong>Qtd:</strong>
-  <%= @servico.qtd %>
-</p>
-
-<p>
-  <strong>Peso saida:</strong>
-  <%= @servico.peso_saida %>
-</p>
-
-<p>
-  <strong>Peso retorno:</strong>
-  <%= @servico.peso_retorno %>
-</p>
-
-<p>
-  <strong>Totalservico:</strong>
-  <%= @servico.totalServico %>
-</p>
-
-<p>
-  <strong>Ref peca:</strong>
-  <%= @servico.ref_peca %>
-</p>
-
-<p>
-  <strong>Solicitante:</strong>
-  <%= @servico.solicitante %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @servico.status %>
-</p>
-
-<p>
-  <strong>Qtdaproduzir:</strong>
-  <%= @servico.qtdAproduzir %>
-</p>
-
-<%= link_to 'Edit', edit_servico_path(@servico) %> |
-<%= link_to 'Back', servicos_path %>
+  </div>
+</div>

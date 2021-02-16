@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">JB Brutos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" <%= link_to 'Home', servicos_path%> <span class="sr-only">(Página atual)</span></a>
+      <a class="nav-item nav-link active" <%=link_to  "Cadastrar Serviço", new_servico_path %></a>
+      <a class="nav-item nav-link active" <%= link_to 'Lista', servicos_list_path%></a>
+       <a class="nav-item nav-link active" <%= link_to 'Geral', servicos_geral_path%></a>
+    
+      <% if user_signed_in? %>
+        <a class="nav-item nav-link"<%= link_to 'Sair',  destroy_user_session_path, :method => :delete %></a>
+        <a class="nav-link text-white">Welcome: <%= current_user.email%></a>
+      <% else %>
+        <a class="nav-link text-white">Welcome:</a>
+      <% end %>
+    </div>
+  </div>
+</nav>

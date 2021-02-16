@@ -1,22 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Servicos</h1>
-
-<table>
+<%= link_to 'Criar Serviço', new_servico_path, :class=>'btn btn-outline-success', :style=>'float: right; margin-right: 10px;' %>
+<br><br>
+<table class="table">
   <thead>
     <tr>
       <th>Prestador</th>
-      <th>Tiposervico</th>
-      <th>Saida</th>
-      <th>Retorno</th>
+      <th>Tipo_Serviço</th>
+      <th>Saída</th>
+      <th>Retorno</th>      
+      <th>Peso_Saída</th>
+      <th>Peso_Retorno</th>
       <th>Qtd</th>
-      <th>Peso saida</th>
-      <th>Peso retorno</th>
-      <th>Totalservico</th>
-      <th>Ref peca</th>
+      <th>Qtd.Produzir</th>
+  <% if current_user.email == "adm@adm.com" %>
+      <th>Val.Unit.Serv.</th>      
+      <th>Total_Serviço</th>
+   <% end %>
+      <th>Ref.Peça</th>
       <th>Solicitante</th>
       <th>Status</th>
-      <th>Qtdaproduzir</th>
+    
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,18 +32,21 @@
         <td><%= servico.prestador %></td>
         <td><%= servico.tipoServico %></td>
         <td><%= servico.saida %></td>
-        <td><%= servico.retorno %></td>
-        <td><%= servico.qtd %></td>
+        <td><%= servico.retorno %></td>       
         <td><%= servico.peso_saida %></td>
         <td><%= servico.peso_retorno %></td>
+        <td><%= servico.qtd %></td>
+        <td><%= servico.qtdAproduzir %></td>        
+    <% if current_user.email == "adm@adm.com" %>
+        <td><%= servico.valorUnitarioServico %></td>
         <td><%= servico.totalServico %></td>
+    <% end %>
         <td><%= servico.ref_peca %></td>
         <td><%= servico.solicitante %></td>
-        <td><%= servico.status %></td>
-        <td><%= servico.qtdAproduzir %></td>
-        <td><%= link_to 'Show', servico %></td>
-        <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
-        <td><%= link_to 'Destroy', servico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= servico.status %></td>        
+        <td><%= link_to 'Show', servico, :class=>'btn btn-outline-info' %></td>
+        <td><%= link_to 'Edit', edit_servico_path(servico), :class=>'btn btn-outline-warning' %></td>
+        <td><%= link_to 'Destroy', servico, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn btn-outline-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +54,4 @@
 
 <br>
 
-<%= link_to 'New Servico', new_servico_path %>
+

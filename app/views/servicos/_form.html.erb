@@ -1,77 +1,90 @@
-<%= form_with(model: servico) do |form| %>
-  <% if servico.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(servico.errors.count, "error") %> prohibited this servico from being saved:</h2>
+<script>
+function sum() {
+    
+      var val1 = document.getElementById("txt_qtd_produzir").value;
+      var val2 = document.getElementById("valorUnitServico").value;      
+      
+       var result = parseInt(val1) * parseInt(val2);
+       if (!isNaN(result)) {
+           document.getElementById("valorTotalServico").value = result;
+       }    
+   }
+</script>
 
-      <ul>
-        <% servico.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+<div class="card border-secondary mb-3" style="max-width: 29rem; margin-left: 350px; margin-top: 7px">
+  <div class="card-header"><h4>Cadastro de Etiqueta</h4></div>
+    <div class="card-body text-secondary">
+        <%= form_with(model: servico) do |form| %>
+          <% if servico.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(servico.errors.count, "error") %> prohibited this servico from being saved:</h2>
+
+              <ul>
+                <% servico.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= form.label :prestador %>
+            <%= form.text_field :prestador, autocomplete:"off", id:"txt_prestador" %>
+          </div>
+
+          <div class="field">
+            <%= form.label :tipoServico %>
+            <%= form.select(:tipoServico, ['Montagem', 'Solda Fria', 'Solda Quente', 'Cravação', 'Corte', 'Castroagem'], :class=>'tipoServico')%>
+          </div>
+
+           <div class="field">
+            <%= form.label 'QTD Peças', id:"lb_qtd" %>
+            <%= form.text_field :qtd, id:"txt1", autocomplete:"off" %>
+            <%= form.label 'QTD a Produzir', id:"lb_qtd_produzir"  %>
+            <%= form.text_field :qtdAproduzir, id:"txt_qtd_produzir", autocomplete:"off" %>
+          </div>
+
+          <div class="field">
+            <%= form.label :saida %>
+            <%= form.text_field :saida, placeholder: 'dd/mm/aaaa', autocomplete:"off", id:"txt_dt_saida" %>
+            <%= form.label :retorno %>
+            <%= form.text_field :retorno, placeholder: 'dd/mm/aaaa', autocomplete:"off", id:"txt_dt_retorno" %>
+          </div>
+
+         
+          <div class="field">
+            <%= form.label :peso_saida %>
+            <%= form.text_field :peso_saida, autocomplete:"off", id:"txt_peso_saida" %>
+            <%= form.label :peso_retorno, id:"lb_peso_retorno" %>
+            <%= form.text_field :peso_retorno, autocomplete:"off", id:"txt_peso_retorno" %>
+          </div>
+          <% if current_user.email == "adm@adm.com" %>
+            <div class="field">
+              <%= form.label 'Valor Unit Serviço' %>
+              <%= form.text_field :valorUnitarioServico, id:'valorUnitServico', autocomplete:"off", :onblur=>"sum();" %>
+              <%= form.label 'Total Serviço', id:'lbUnitServico' %>
+              <%= form.text_field :totalServico, id:'valorTotalServico', autocomplete:"off" %>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= form.label :ref_peca %>
+            <%= form.text_field :ref_peca, autocomplete:"off", id:"txt_ref"%>
+          </div>
+
+          <div class="field">
+            <%= form.label :solicitante %>
+            <%= form.text_field :solicitante, id:"txt_solicitante", autocomplete:"off" %>
+          </div>
+
+          <div class="field">
+            <%= form.label :status %>
+            <%= form.select(:status, ['Criado', 'Pago'])%>
+          </div>
+
+          <div class="actions">
+            <%= form.submit 'Criar Serviço', :class=>'btn btn-outline-success'%>
+            <%= link_to 'Voltar', servicos_path, :class=>'btn btn-outline-dark' %>
+
+          </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :prestador %>
-    <%= form.text_field :prestador %>
-  </div>
-
-  <div class="field">
-    <%= form.label :tipoServico %>
-    <%= form.text_field :tipoServico %>
-  </div>
-
-  <div class="field">
-    <%= form.label :saida %>
-    <%= form.date_select :saida %>
-  </div>
-
-  <div class="field">
-    <%= form.label :retorno %>
-    <%= form.date_select :retorno %>
-  </div>
-
-  <div class="field">
-    <%= form.label :qtd %>
-    <%= form.number_field :qtd %>
-  </div>
-
-  <div class="field">
-    <%= form.label :peso_saida %>
-    <%= form.text_field :peso_saida %>
-  </div>
-
-  <div class="field">
-    <%= form.label :peso_retorno %>
-    <%= form.text_field :peso_retorno %>
-  </div>
-
-  <div class="field">
-    <%= form.label :totalServico %>
-    <%= form.text_field :totalServico %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ref_peca %>
-    <%= form.text_field :ref_peca %>
-  </div>
-
-  <div class="field">
-    <%= form.label :solicitante %>
-    <%= form.text_field :solicitante %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :qtdAproduzir %>
-    <%= form.number_field :qtdAproduzir %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

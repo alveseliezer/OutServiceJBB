@@ -1,3 +1,33 @@
 // Place all the styles related to the Servicos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#txt_prestador{
+    width: 340px;
+ }
+ #txt_solicitante{
+    width: 332px;
+ }
+ 
+ 
+ #txt_peso_saida, #txt_peso_retorno, #txt1, #txt_qtd_produzir, #valorUnitServico, #valorTotalServico{
+    width: 80px;
+ }
+ #txt_dt_saida, #txt_dt_retorno{
+    width: 150px;
+ }
+ .tipoServico{
+    width: 445px;
+ }
+ #lb_qtd_produzir{
+     margin-left: 63px;
+ }
+ #lb_peso_retorno{
+    margin-left: 66px;
+}
+#lbUnitServico{
+    margin-left: 25px;
+}
+
+#txt_ref{
+    width: 340px;
+}

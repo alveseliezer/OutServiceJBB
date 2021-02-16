@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<div class="card border-secondary mb-3" style="max-width: 30rem; margin-left: 20px; margin-top: 5px;">
+  <div class="card-header"><h3>J.B. Brutos</h3></div>
+         <hr>
+            <!--<p style="color: black;">-->
+                <strong>Prestador:</strong>
+                <%= @servico.prestador %>
+                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tipo Serviço:</strong>
+                <%= @servico.tipoServico %><br>
+                <strong>Saida:</strong>
+                <%= @servico.saida.strftime("%d/%m/%Y")  %>
+                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Retorno:</strong>
+                <%= @servico.retorno.strftime("%d/%m/%Y")  %><br>
+                <strong>Qtd:</strong>
+                <%= @servico.qtd %>
+                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Qtd. a Produzir:</strong>
+                <%= @servico.qtdAproduzir %><br>
+                <strong>Peso saida:</strong>
+                <%= @servico.peso_saida %>
+                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Peso retorno:</strong>
+                <%= @servico.peso_retorno %><br> 
+                <strong>Ref peca:</strong>
+                <%= @servico.ref_peca %>
+                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Status:</strong>
+                <%= @servico.status %><br>
+                <strong>Solicitante:</strong>
+                <%= @servico.solicitante %>
+             <!-- </p> -->
+        <hr>
+
+</div>

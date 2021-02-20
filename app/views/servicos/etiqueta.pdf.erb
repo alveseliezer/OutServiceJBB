@@ -2,15 +2,14 @@
 <div class="card border-secondary mb-3" style="max-width: 30rem; margin-left: 20px; margin-top: 5px;">
   <div class="card-header"><h3>J.B. Brutos</h3></div>
          <hr>
-            <!--<p style="color: black;">-->
                 <strong>Prestador:</strong>
                 <%= @servico.prestador %>
                 <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tipo Serviço:</strong>
                 <%= @servico.tipoServico %><br>
                 <strong>Saida:</strong>
-                <%= @servico.saida.strftime("%d/%m/%Y")  %>
+                <%= @servico.saida.day.to_s+"/"+@servico.saida.month.to_s+"/"+@servico.saida.year.to_s %>
                 <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Retorno:</strong>
-                <%= @servico.retorno.strftime("%d/%m/%Y")  %><br>
+                <%= @servico.retorno.day.to_s+"/"+@servico.retorno.month.to_s+"/"+@servico.retorno.year.to_s   %><br>
                 <strong>Qtd:</strong>
                 <%= @servico.qtd %>
                 <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Qtd. a Produzir:</strong>

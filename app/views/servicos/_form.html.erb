@@ -46,9 +46,9 @@ function sum() {
 
           <div class="field">
             <%= form.label :saida %>
-            <%= form.text_field :saida, :value=>(form.object.saida.strftime('%d/%m/%Y')if form.object.saida), placeholder: 'dd/mm/aaaa', autocomplete:"off", id:"txt_dt_saida" %>
+            <%= form.text_field :saida,  placeholder: 'dd/mm/aaaa', autocomplete:"off", id:"txt_dt_saida" %>
             <%= form.label :retorno %>
-            <%= form.text_field :retorno, :value=>(form.object.retorno.strftime('%d/%m/%Y') if form.object.retorno), placeholder: 'dd/mm/aaaa', autocomplete:"off", id:"txt_dt_retorno" %>
+            <%= form.text_field :retorno,  placeholder: 'dd/mm/aaaa', autocomplete:"off", id:"txt_dt_retorno" %>
           </div>
 
          

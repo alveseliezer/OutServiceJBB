@@ -8,9 +8,9 @@
         <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Tipo Serviço:</strong>
         <%= @servico.tipoServico %><br>
         <strong>Saida:</strong>
-        <%= @servico.saida.strftime("%d/%m/%Y")  %>
+        <%= @servico.saida.strftime("%d/%m/%Y")if @servico.saida %>
         <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Retorno:</strong>
-        <%= @servico.retorno.strftime("%d/%m/%Y")  %><br>
+        <%= @servico.retorno.strftime("%d/%m/%Y")if @servico.retorno %><br>
         <strong>Qtd:</strong>
         <%= @servico.qtd %>
         <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Qtd. a Produzir:</strong>

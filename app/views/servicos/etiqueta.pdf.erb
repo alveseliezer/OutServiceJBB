@@ -1,30 +1,48 @@
 <meta charset="utf-8">
 <div class="card border-secondary mb-3" style="max-width: 30rem; margin-left: 20px; margin-top: 5px;">
   <div class="card-header"><h3>J.B. Brutos</h3></div>
-         <hr>
-                <strong>Prestador:</strong>
-                <%= @servico.prestador %>
-                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tipo Serviço:</strong>
-                <%= @servico.tipoServico %><br>
-                <strong>Saida:</strong>
-                <%= @servico.saida.day.to_s+"/"+@servico.saida.month.to_s+"/"+@servico.saida.year.to_s %>
-                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Retorno:</strong>
-                <%= @servico.retorno.day.to_s+"/"+@servico.retorno.month.to_s+"/"+@servico.retorno.year.to_s   %><br>
-                <strong>Qtd:</strong>
-                <%= @servico.qtd %>
-                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Qtd. a Produzir:</strong>
-                <%= @servico.qtdAproduzir %><br>
-                <strong>Peso saida:</strong>
-                <%= @servico.peso_saida %>
-                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Peso retorno:</strong>
-                <%= @servico.peso_retorno %><br> 
-                <strong>Ref peca:</strong>
-                <%= @servico.ref_peca %>
-                <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Status:</strong>
-                <%= @servico.status %><br>
-                <strong>Solicitante:</strong>
-                <%= @servico.solicitante %>
-             <!-- </p> -->
-        <hr>
+         <hr>                 
+                <div class="grid-item">
+                  <strong>Prestador:</strong>
+                  <%= @servico.prestador %>
+               </div>
+               <div class="grid-item" >               
+                 
+                </div>
+                <div class="grid-item">
+                  <strong>Saida:</strong>
+                  <%= @servico.saida.day.to_s+"/"+@servico.saida.month.to_s+"/"+@servico.saida.year.to_s  %>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Retorno:</strong>
+                  <%= @servico.retorno.day.to_s+"/"+@servico.retorno.month.to_s+"/"+@servico.retorno.year.to_s  %>
+                </div>
+                <div class="grid-item">
+                  <strong>Qtd:</strong>
+                  <%= @servico.qtd %>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Qtd. a Produzir:</strong>
+                  <%= @servico.qtdAproduzir %>
+                </div>
+                <div class="grid-item">
+                  <strong>Peso saida:</strong>
+                  <%= @servico.peso_saida %>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Peso retorno:</strong>
+                  <%= @servico.peso_retorno %>
+                </div>
+                <div class="grid-item">
+                  <strong>Status:</strong>
+                  <%= @servico.status %>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ref peca:</strong>
+                  <%= @servico.ref_peca %>
+                </div>
+                <div class="grid-item">
+                  <strong>Solicitante:</strong>
+                  <%= @servico.solicitante %>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Tipo Serviço:</strong>
+                  <%= @servico.tipoServico %>
+                </div>
+                <div class="grid-item"></div>
 
+               <hr>
+              </div> 
+
+   </div>
 </div>

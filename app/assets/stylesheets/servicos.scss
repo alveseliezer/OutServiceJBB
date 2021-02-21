@@ -6,8 +6,7 @@
  }
  #txt_solicitante{
     width: 332px;
- }
- 
+ } 
  
  #txt_peso_saida, #txt_peso_retorno, #txt1, #txt_qtd_produzir, #valorUnitServico, #valorTotalServico{
     width: 80px;
@@ -31,3 +30,15 @@
 #txt_ref{
     width: 340px;
 }
+
+// Conf Etiqueta
+.grid-container {
+   display: grid;
+   width: 500px;
+   grid-template-columns: auto auto;
+  
+ }
+ .grid-item {  
+   padding: 2px;
+  
+ }

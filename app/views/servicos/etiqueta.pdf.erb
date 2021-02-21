@@ -1,48 +1,46 @@
 <meta charset="utf-8">
-<div class="card border-secondary mb-3" style="max-width: 30rem; margin-left: 20px; margin-top: 5px;">
-  <div class="card-header"><h3>J.B. Brutos</h3></div>
-         <hr>                 
-                <div class="grid-item">
+<div class="card border-secondary mb-3" style="max-width: 30rem; margin-left: 5px; margin-top: 2px;">
+  <h4>J.B. Brutos</h4>
+         <hr>  
+               <div class="grid-item"style="font-size:14px;">
                   <strong>Prestador:</strong>
                   <%= @servico.prestador %>
                </div>
-               <div class="grid-item" >               
-                 
-                </div>
-                <div class="grid-item">
+              
+                <div class="grid-item"style="font-size:14px;">
                   <strong>Saida:</strong>
                   <%= @servico.saida.day.to_s+"/"+@servico.saida.month.to_s+"/"+@servico.saida.year.to_s  %>
                   <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Retorno:</strong>
                   <%= @servico.retorno.day.to_s+"/"+@servico.retorno.month.to_s+"/"+@servico.retorno.year.to_s  %>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item"style="font-size:14px;">
                   <strong>Qtd:</strong>
                   <%= @servico.qtd %>
                   <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Qtd. a Produzir:</strong>
                   <%= @servico.qtdAproduzir %>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item"style="font-size:14px;">
                   <strong>Peso saida:</strong>
                   <%= @servico.peso_saida %>
-                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Peso retorno:</strong>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Peso retorno:</strong>
                   <%= @servico.peso_retorno %>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item"style="font-size:14px;">
                   <strong>Status:</strong>
                   <%= @servico.status %>
                   <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Ref peca:</strong>
                   <%= @servico.ref_peca %>
                 </div>
-                <div class="grid-item">
+                <div class="grid-item"style="font-size:14px;">
                   <strong>Solicitante:</strong>
                   <%= @servico.solicitante %>
-                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Tipo Serviço:</strong>
+                  <strong>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tipo Serviço:</strong>
                   <%= @servico.tipoServico %>
                 </div>
                 <div class="grid-item"></div>
-
+           
                <hr>
-              </div> 
+         </div> 
 
    </div>
 </div>

@@ -8,7 +8,7 @@
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, :autocomplete=>"nome" %>
+          <%= f.email_field :email, autofocus: true, :autocomplete=>"nome", :disabled => 'true' %>
         </div>
 
         <div class="field">
@@ -16,7 +16,7 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password,:autocomplete=>"nome"%>
+          <%= f.password_field :password,:autocomplete=>"nome", :disabled => 'true'%>
         </div>
 
         <div class="field">

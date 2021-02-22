@@ -16,7 +16,7 @@ class ListController < ApplicationController
   end
 
   def geral 
-    @geral = Servico.all
+    @geral = Servico.all.order(created_at: :desc)
     @busca = "%#{params[:search]}%"   
     @geral = Servico.where("prestador LIKE ?", @busca)
     @teste = params[:id]

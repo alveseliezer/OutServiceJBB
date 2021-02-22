@@ -4,7 +4,6 @@ class ServicosController < ApplicationController
 
   # GET /servicos or /servicos.json
   def index
-    #@servicos = Servico.all
     @servicos = Servico.where("status LIKE 'Criado'").order(created_at: :desc)
    
     @days = Date.tomorrow

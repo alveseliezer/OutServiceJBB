@@ -6,13 +6,13 @@ class ServicosController < ApplicationController
   def index
     @servicos = Servico.where("status LIKE 'Criado'").order(created_at: :desc)
    
-    @days = Date.tomorrow
-    @calc_date =  Servico.select('retorno')
-    @calc_date.each do |cd|
-            if(cd.retorno == Date.tomorrow)
-            flash[:alert]= 'Alerta! Há prazos a vencer amanhã!'
-          end
-    end
+   # @days = Date.tomorrow
+   # @calc_date =  Servico.select('retorno')
+   # @calc_date.each do |cd|
+   #         if(cd.retorno == Date.tomorrow)
+   #         flash[:alert]= 'Alerta! Há prazos a vencer amanhã!'
+   #       end
+   # end
   end
  
   def show

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_212625) do
+ActiveRecord::Schema.define(version: 2021_02_24_152647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2021_02_15_212625) do
   create_table "servicos", force: :cascade do |t|
     t.string "prestador"
     t.string "tipoServico"
-    t.date "saida"
-    t.date "retorno"
+    t.string "saida"
+    t.string "retorno"
     t.integer "qtd"
     t.float "peso_saida"
     t.float "peso_retorno"

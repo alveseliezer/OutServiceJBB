@@ -3,8 +3,8 @@ class CreateServicos < ActiveRecord::Migration[6.1]
     create_table :servicos do |t|
       t.string :prestador
       t.string :tipoServico
-      t.date :saida
-      t.date :retorno
+      t.string :saida
+      t.string :retorno
       t.integer :qtd
       t.float :peso_saida
       t.float :peso_retorno
@@ -13,6 +13,7 @@ class CreateServicos < ActiveRecord::Migration[6.1]
       t.string :solicitante
       t.string :status
       t.integer :qtdAproduzir
+      t.decimal :valorUnitarioServico
 
       t.timestamps
     end

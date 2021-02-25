@@ -4,9 +4,9 @@ function sum() {
       var val1 = document.getElementById("txt_qtd_produzir").value;
       var val2 = document.getElementById("valorUnitServico").value;      
       
-       var result = parseInt(val1) * parseInt(val2);
+       var result = parseInt(val1) * parseFloat(val2);
        if (!isNaN(result)) {
-           document.getElementById("valorTotalServico").value = result;
+           document.getElementById("valorTotalServico").value = parseFloat(result);
        }    
    }
 </script>
@@ -63,8 +63,8 @@ function sum() {
               <%= form.label 'Valor Unit Serviço' %>
               <%= form.text_field :valorUnitarioServico, id:'valorUnitServico', autocomplete:"off", :onblur=>"sum();" %>
               <%= form.label 'Total Serviço', id:'lbUnitServico' %>
-              <%= form.text_field :totalServico, id:'valorTotalServico', autocomplete:"off" %>
-            </div>
+              <%= form.text_field :totalServico, id:'valorTotalServico', autocomplete:"off" %><br>
+           </div>
           <% end %>
 
           <div class="field">
